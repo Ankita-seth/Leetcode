@@ -1,1 +1,19 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        vector<bool> res(candies.size(), false); 
+        int maximum = INT_MIN;
+        for(int i = 0; i<candies.size(); i++)
+        {
+            maximum = max(candies[i],maximum);
+        }
+        for(int i = 0; i<candies.size(); i++)
+        {
+            int sum = candies[i] + extraCandies;
+            if(sum >= maximum)
+               res[i] = true;
+        }
+        return res;
+    }
 
+};
