@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        int sPtr = 0; // Pointer for string s
+        int tPtr = 0; // Pointer for string t
+        
+        // Iterate through both strings
+        while (sPtr < s.size() && tPtr < t.size()) {
+            if (s[sPtr] == t[tPtr]) {
+                // If the characters match, move the pointer in s
+                sPtr++;
+            }
+            // Always move the pointer in t
+            tPtr++;
+        }
+        
+        // If sPointer has reached the end of s, it means s is a subsequence of t
+        return sPtr == s.size();
+    }
+};
